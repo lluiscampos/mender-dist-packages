@@ -18,7 +18,7 @@ set -e
 
 IMAGE_NAME_PREFIX=mendersoftware/mender-dist-packages:debian-builder
 
-for arch in amd64 armhf arm64; do
+for arch in amd64 armhf; do
 
     # Pass GPG key as build argument if set
     if [ -n "${GPG_KEY_BUILD}" ]; then

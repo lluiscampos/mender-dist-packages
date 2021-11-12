@@ -100,7 +100,7 @@ if [ "$arch_indep" = "true" ]; then
             amd64 \
             ${CI_PIPELINE_ID:-LOCAL}
 else
-    for arch in amd64 armhf arm64; do
+    for arch in armhf; do
         if [ "$arch" = "amd64" ]; then
             # For amd64, build both architecture dependent and independent packages.
             BUILD_TYPE=binary
