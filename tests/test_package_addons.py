@@ -16,9 +16,15 @@
 import pytest
 import re
 
+from flaky import flaky
+
 from helpers import package_filename, upload_deb_package, check_installed
+from mender_test_containers.conftest import TestContainerDidNotboot
 
+def did_not_boot(err, *args):
+    return issubclass(err[0], TestContainerDidNotboot)
 
+@flaky(max_runs=3, rerun_filter=did_not_boot)
 @pytest.mark.usefixtures("setup_mender_configured")
 class TestPackageAddons:
     @pytest.mark.mender_connect

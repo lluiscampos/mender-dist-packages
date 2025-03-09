@@ -10,6 +10,8 @@ charset-normalizer==3.3.2
     # via requests
 exceptiongroup==1.2.1
     # via pytest
+flaky==3.8.1
+    # via -r requirements.in
 idna==3.7
     # via requests
 iniconfig==2.0.0
